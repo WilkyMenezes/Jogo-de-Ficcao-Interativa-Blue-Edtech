@@ -272,8 +272,6 @@ tentativasS();
             }
 
             // break; esta quebrando codigo 
-            
-            
             // function jogarMais(){
             //                         do {
             //             console.log(`
