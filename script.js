@@ -182,40 +182,49 @@ tentativasS();
                                 voltaAoLaboratorioComMaterial();
                             }
                         }
-                        
-                        
+
                         if (codigo != sorteio) {
                             console.log('você errou, se ainda possui vida tente mais uma vez!\n\n')
+        
                             voltaLaboratorioSemMaterial();
                             
                     
-                            }
-                }
-                else if (separados == false){
+                              }
+                        }
+                        else if (separados == false){
                         console.log('Caçador 1: '+cacador1+' e caçador 2: '+cacador2+' Vão juntos, porém acabam se atrasando demais na busca pelos materiais, e o monstro acaba destruindo a humanidade')
                         jogarnovamente();
-                }
+                          }
+                        }
 
-        
-            }
-
-            function voltaLaboratorioSemMaterial(){
+                        function voltaLaboratorioSemMaterial(){
                 
+                            infoCacador1.vida = infoCacador1.vida - 33.1
+                            infoCacador2.vida = infoCacador2.vida - 33.1
 
-                    infoCacador1.vida = infoCacador1.vida - 33.1
-                    infoCacador2.vida = infoCacador2.vida - 33.1
+                                console.log('\nO monstro venceu dessa vez, mas você pode jogar novamente se quiser...\n')
+                                let continua = prompt (`\n\nDeseja continuar, e tentar novamente pegar os materiais ?  1)sim ou 2)não`)
 
 
-                if (infoCacador2.vida == 0.7000000000000028 && infoCacador2.vida == 0.7000000000000028 ){    
-                    
-                    console.log('Você esta sem vida, Você perdeu o jogo\n\n')
-                    
-                    jogarnovamente();
-                    // intCacador2 = parseInt(infoCacador2Vida);
-                    // intCacador1 = parseInt(infoCacador1Vida);
-                }else{
-                    tentativasS();
-                }
+                                // jogarMais()
+
+                                if (infoCacador2.vida == 0.7000000000000028 && infoCacador2.vida == 0.7000000000000028 ){    
+                                        console.log('Você esta sem vida, Você perdeu o jogo\n\n')
+                                
+                                jogarnovamente();
+                                // intCacador2 = parseInt(infoCacador2Vida);
+                                // intCacador1 = parseInt(infoCacador1Vida);
+                                }
+                                
+                                else if ( continua == 1){
+                                         tentativasS();
+                                 }
+                                else if (continua == 2){
+                                        console.log('Devido ao caus causado, e a falta de materiais para captura e destruição do monstro, a humanidade é dizimada')
+                                        jogarnovamente();
+                                
+                            }
+
 
             }
 
@@ -257,12 +266,30 @@ tentativasS();
             }
 
             function voltaAoLaboratorioComMaterial(){
-                
 
                 console.log('\n\n'+infoCacador2.nome+' Volta para o laboratório com material fibra espacial que será ultilizada para criar uma arma letal \n e matar o monstro. \n\n\n '+infoCacador1.nome+' Volta com o Sangue do monstro \nque sera ultilizada para criar um antidoto e salvar a humanidade.')
                 ganharGame();
             }
 
+            // break; esta quebrando codigo 
+            
+            
+            // function jogarMais(){
+            //                         do {
+            //             console.log(`
+            //          Deseja jogar de novo?: 
+            //          1) Sim            2) Não
+            //          `)
+            //             let jogaMais = prompt(`R: `).toLowerCase();
+            //             if (jogaMais == 1 || jogaMais == `sim`) {
+            //                 console.clear();
+            //                 validador();
+            //             }  if (jogaMais == 2 || jogaMais == 'nao') {
+            //                 console.log('FIM!')
+            //                 break;
+            //             }
+            //         }while (true){} 
+            // }
             function ganharGame(){
                 console.log('Parabéns você ganhou o jogo, O monstro foi Derrotado com uma arma letal e a humanidade foi salva com o antitodo criado pelo cientista  \n ')
             }
